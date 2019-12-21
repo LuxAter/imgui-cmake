@@ -11,13 +11,11 @@ set(IMGUI_SOURCES ${ROOT}/imgui.cpp ${ROOT}/imgui_draw.cpp
 
 add_library(imgui_static STATIC ${IMGUI_SOURCES} ${IMGUI_PUBLIC_HEADERS}
                                 ${IMGUI_PRIVATE_HEADERS})
-target_include_directories(
-  imgui_static PUBLIC $<BUILD_INTERFACE:${ROOT}>$<INSTALL_INTERFACE:imgui>)
+target_include_directories(imgui_static PUBLIC ${ROOT})
 if(BUILD_SHARED_LIBS)
   add_library(imgui_shared SHARED ${IMGUI_SOURCES})
   add_library(imgui ALIAS imgui_shared)
-  target_include_directories(
-    imgui_shared PUBLIC $<BUILD_INTERFACE:${ROOT}>$<INSTALL_INTERFACE:imgui>)
+  target_include_directories(imgui_shared PUBLIC ${ROOT})
 else()
   add_library(imgui ALIAS imgui_static)
 endif()
