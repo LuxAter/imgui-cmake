@@ -4,7 +4,7 @@ project(imgui LANGUAGES CXX)
 set(ROOT ${CMAKE_CURRENT_SOURCE_DIR})
 set(IMGUI_PUBLIC_HEADERS ${ROOT}/imgui.h)
 set(IMGUI_PRIVATE_HEADERS
-    ${ROOT}/imgui_internal.h ${ROOT}/imgui_config.h ${ROOT}/imstb_rectpack.h
+    ${ROOT}/imgui_internal.h ${ROOT}/imconfig.h ${ROOT}/imstb_rectpack.h
     ${ROOT}/imstb_textedit.h ${ROOT}/imstb_truetype.h)
 set(IMGUI_SOURCES ${ROOT}/imgui.cpp ${ROOT}/imgui_draw.cpp
                   ${ROOT}/imgui_widgets.cpp ${ROOT}/imgui_demo.cpp)
